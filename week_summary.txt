@@ -1,0 +1,26 @@
+list of topics:
+
+(we will see and learn sorts and searches along the way)
+
+day2:
+
+arrays
+nested arrays and matrix
+time complexity / space complexity
+node
+linked list, double linked list
+
+day3:
+recursion
+stack
+queue
+
+day4:
+sets
+trees
+binary trees
+
+
+day 5:
+hash map
+graphs
