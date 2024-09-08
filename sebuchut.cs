@@ -47,95 +47,82 @@
         }
 
         //ex4 
-        //public static int SumOfAllTriplets(int[] arr)
-        //{
-        //    for (int i = 0;i < arr.Length -2;i++)
-        //    {
-        //        for(int j = 1; j < arr.Length-1;j++)
-        //        {
-        //            for(int k = 2; k < arr.Length;k++)
-        //            {
-        //                int currentSum = arr[i] + arr[j] + arr[k];
-
-        //            }
-        //        }
-        //    }
-        //}
-        //public static int[] FindLastClosePairWithProduct(int[] array, int product)
-        //{
-            
-        //    for (int i = array.Length;i > 0 -1;i--)
-        //    {
-
-        //    }
-        //}
-
-        //bubbel sort
-        public static int[] BubbleSort(int[] arr)
+        public static int SumOfAllTriplets(int[] arr)
         {
-            int temp = 0;
-            for (int i = 0;i < arr.Length -1;i++)
+            int sum = 0;
+            for(int i = 0; i < arr.Length - 2; i++)
             {
-                for(int j = 0; j < arr.Length -i -1; j++)
+                for(int j = 1; j < arr.Length - 1; j++)
                 {
-                    if(arr[j] > arr[j + 1])
+                    for(int k = 2; k < arr.Length; k++)
                     {
-                        temp = arr[j];
-                        arr[j] = arr[j+1];
-                        arr[j +1 ] = temp;
-                    }
-                  
-                }
-                
-            }
-            ArrayOptions.printArray(arr);
-            return arr;
-        }
+                        int currentSum = arr[i] + arr[j] + arr[k];
+                        if(currentSum > sum)
+                        {
+                            sum = currentSum;
+                        }
 
-        //merge sort
-        public static void MergeSort() { }
-
-
-        //Insert sort
-        public static void InsertSort(int[] array)
-        {
-            int temp;
-            for (int i = 1;i<array.Length;i++)
-            {
-                for(int j = i; j > 0 && array[j] < array[j-1]; j--)
-                {
-                    temp = array[j-1];
-                    array[j - 1] = array[j];
-                    array[j] = temp;
-                }
-            }
-            ArrayOptions.printArray(array);
-        }
-
-
-        //selection sort
-        public static void SelectionSort(int[] array)
-        {
-            int temp;
-            int min = array[0];
-            for (int i = 0; i<array.Length;i++)
-            {
-                for (int j = 0; j < array.Length -i -1; j++)
-                {
-                    if(min > array[j +1] )
-                    {
-                        temp = array[j];
-                        array[i] = array[j+1];
-                        array[j+1] = temp;
-                   
                     }
                 }
             }
-            ArrayOptions.printArray(array);
+            return sum;
         }
 
+        //ex 6
+        // O(n)
+        public static int CountEvenNumbers(int[] array)
+        {
+            int current = 0;
+            for(int i = 0; i > array.Length; i--)
+            {
+                if(array[i] % 2 == 0)
+                {
+                    current++;
+                }
+            }
+            return current;
+        }
 
+   
 
+        //ex 8
+        //O(n2) + n
+        public static void FindPairsWithSum(int[] array, int sum)
+        {
+            for (int i = 0; array[i] < array.Length; ++i)
+            {
+                for(int j = 1; j < array.Length - 1;j++)
+                {
+                    if (array[i] + array[j] == sum)
+                    {
+                        Console.WriteLine(array[i]+" "+ array[j]);
+                    }
+                }
+            }
+        }
+
+        //ex 9
+        //O(n) + 2 log n
+        public static int[] CountFrequency(int[] array)
+        {
+            int[] newarr = new int[array.Length];
+            for(int i = 0; array[i] < array.Length ;++i)
+            {
+                for(int j =1; j < array.Length -1 - i;j++)
+                {
+                    if(array[i] == array[j])
+                    {
+                        newarr[i]++;
+                    }
+
+                }
+            }
+            ArrayOptions.printArray(newarr);
+            return newarr;
+        }
+
+ 
     }
-
 }
+
+
